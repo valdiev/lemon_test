@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap");
 html,
 body,
 * {
@@ -11,6 +12,20 @@ html {
   font-size: 62.5%;
 }
 
+.descr {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.news-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.1rem;
+  line-height: 2.6rem;
+  font-weight: 700;
+}
+
 .container {
   width: 95%;
   margin: 0 auto;
@@ -20,6 +35,9 @@ header {
   background-color: #f8f9fa;
   position: relative;
   padding-top: 1rem;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
 }
 
 header .navbar {
@@ -73,6 +91,10 @@ header .navbar__search {
 }
 
 header .navbar__search input {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #6c757d;
   width: 100%;
   padding: 0.5rem 0.6rem;
   border-radius: 0px;
@@ -131,13 +153,14 @@ header .navbar__links ul li {
 }
 
 header .navbar__links ul li a {
-  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
   color: #6c757d;
-  font-size: 1.8rem;
+  text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-weight: 700;
 }
 
 header .navbar__links ul li a span.picto {
@@ -157,6 +180,10 @@ header .navbar__links ul li.active a {
 }
 
 header .navbar__links ul .dropDown {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #6c757d;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -173,9 +200,6 @@ header .navbar__links ul .dropDown {
   transition: color 0.4s ease, -webkit-transform 0.4s ease;
   transition: transform 0.4s ease, color 0.4s ease;
   transition: transform 0.4s ease, color 0.4s ease, -webkit-transform 0.4s ease;
-  color: #6c757d;
-  font-size: 1.8rem;
-  font-weight: 700;
 }
 
 header .navbar__links ul .dropDown.active {
@@ -235,7 +259,8 @@ header .navbar__links ul .dropDown__content {
 header .navbar__links ul .dropDown__content a {
   text-decoration: none;
   display: block;
-  font-size: 1.8rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
   font-weight: 400;
   color: #6c757d;
 }
@@ -256,7 +281,95 @@ header .navbar__links ul .dropDown__content a:last-child {
   padding: 0.8rem 0.8rem 0;
 }
 
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 13.2rem;
+}
+
+main section.hero {
+  width: 100%;
+  height: 35vw;
+}
+
+main section.hero .swiper {
+  height: 100%;
+  width: 100%;
+}
+
+main section.hero .swiper .swiper-wrapper .swiper-slide a {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+main section.hero .swiper .swiper-wrapper .swiper-slide a .swiper-slide__content {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fff;
+  text-align: center;
+  width: 80%;
+  display: none;
+}
+
+main section.hero .swiper .swiper-wrapper .swiper-slide a .swiper-slide__content h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-shadow: 0px 2.4px 1.6px rgba(0, 0, 0, 0.23);
+}
+
+main section.hero .swiper .swiper-wrapper .swiper-slide a .swiper-slide__content p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+main section.hero .swiper .swiper-wrapper .swiper-slide a img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main section.hero .swiper .swiper-button-prev {
+  left: 5%;
+}
+
+main section.hero .swiper .swiper-button-next {
+  right: 5%;
+}
+
+main section.hero .swiper .swiper-pagination-bullet {
+  width: 3rem;
+  height: 0.3rem;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+main section.hero .swiper .swiper-button-prev::after {
+  content: url(img/arrow-left.svg);
+}
+
+main section.hero .swiper .swiper-button-next::after {
+  content: url(img/arrow-right.svg);
+}
+
 @media screen and (min-width: 1025px) {
+  header {
+    height: 8.2rem;
+    padding: unset;
+  }
   header .navbar {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -265,6 +378,8 @@ header .navbar__links ul .dropDown__content a:last-child {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding: unset;
+    height: 100%;
   }
   header .navbar__main {
     -webkit-box-flex: 20%;
@@ -308,9 +423,49 @@ header .navbar__links ul .dropDown__content a:last-child {
   }
   header .navbar__links ul .dropDown__content {
     position: absolute;
-    right: 10%;
-    bottom: -100%;
+    right: 5%;
+    bottom: -150%;
     background-color: #fff;
+  }
+  main {
+    padding-top: 8.2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 90%;
+  }
+  main section.hero {
+    height: 50rem;
+  }
+  main section.hero .swiper {
+    height: 100%;
+    width: 100%;
+  }
+  main section.hero .swiper .swiper-wrapper .swiper-slide a {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  main section.hero .swiper .swiper-wrapper .swiper-slide a .swiper-slide__content {
+    display: block;
+  }
+  main section.hero .swiper .swiper-wrapper .swiper-slide a .swiper-slide__content h2 {
+    font-size: 4rem;
+  }
+  main section.hero .swiper .swiper-wrapper .swiper-slide a .swiper-slide__content p {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 70%;
+  }
+  header .navbar__links ul .dropDown__content {
+    right: 15%;
   }
 }
 /*# sourceMappingURL=style.css.map */
